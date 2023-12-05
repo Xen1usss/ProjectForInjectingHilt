@@ -7,20 +7,20 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import app.projectforinjectinghilt.R
 import app.projectforinjectinghilt.ViewModelForFragmentMain
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
+import androidx.fragment.app.viewModels
 
+@AndroidEntryPoint
 class FragmentForActivityMain : Fragment() {
 
-    companion object { //?
-        fun newInstance() = FragmentForActivityMain()
-    }
-
-    private val viewModel: ViewModelForFragmentMain by viewModel()
+    val viewModel: ViewModelForFragmentMain by viewModels()
 
     override fun onCreateView( //?
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.activity_main, container, false)
+        return inflater.inflate(R.layout.fragment_for_activity, container, false)
     }
 
     override fun onResume() {

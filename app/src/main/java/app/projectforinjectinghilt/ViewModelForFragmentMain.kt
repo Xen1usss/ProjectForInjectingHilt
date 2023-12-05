@@ -1,11 +1,14 @@
 package app.projectforinjectinghilt
 
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class ViewModelForFragmentMain : ViewModel() {
+@HiltViewModel
+class ViewModelForFragmentMain @Inject constructor(val test:String) : ViewModel() {
 
     fun log(){
-        println("BBBBBBBBBB")
+        println("BBBBBBBBBB $test")
 
     }
 }
