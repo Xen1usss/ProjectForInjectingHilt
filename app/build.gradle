@@ -30,6 +30,12 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding true
+    }
+    dataBinding{ //это для чего вообще? Скопировала с просторов стек оверфлоу
+        enabled = true  //enable data binding
+    }
 }
 
 dependencies {

@@ -10,18 +10,20 @@ import app.projectforinjectinghilt.ViewModelForFragmentMain
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import androidx.fragment.app.viewModels
+import app.projectforinjectinghilt.databinding.FragmentForActivityBinding
 
 @AndroidEntryPoint
 class FragmentForActivityMain : Fragment() {
 
-    val viewModel: ViewModelForFragmentMain by viewModels()
+    private lateinit var binding: FragmentForActivityBinding
+    val viewModel: ViewModelForFragmentMain by viewModels() //нужно ли тут поставить модификатор private?
 
     override fun onCreateView( //?
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_for_activity, container, false)
-    }
+        binding = FragmentForActivityBinding.inflate(inflater, container, false)
+        return binding?.root    }
 
     override fun onResume() {
         super.onResume()
