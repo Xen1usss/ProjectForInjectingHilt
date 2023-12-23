@@ -1,14 +1,11 @@
-package app.projectforinjectinghilt.fragment
+package app.projectforinjectinghilt.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import app.projectforinjectinghilt.R
-import app.projectforinjectinghilt.ViewModelForFragmentMain
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 import androidx.fragment.app.viewModels
 import app.projectforinjectinghilt.databinding.FragmentForActivityBinding
 
