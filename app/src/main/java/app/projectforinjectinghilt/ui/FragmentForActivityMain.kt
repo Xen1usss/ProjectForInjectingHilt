@@ -26,6 +26,4 @@ class FragmentForActivityMain : Fragment() {
         super.onResume()
         viewModel.log()
     }
-
-
 }
