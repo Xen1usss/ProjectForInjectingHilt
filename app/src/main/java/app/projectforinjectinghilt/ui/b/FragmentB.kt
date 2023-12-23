@@ -6,13 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import app.projectforinjectinghilt.MainActivity
+import app.projectforinjectinghilt.R
 import app.projectforinjectinghilt.databinding.FragmentBBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class FragmentB : Fragment() {
 
-    private lateinit var binding: FragmentBBinding
+    private  var binding: FragmentBBinding? = null
     val viewModel: ViewModelB by viewModels()
 
     override fun onCreateView(
@@ -23,9 +26,15 @@ class FragmentB : Fragment() {
         return binding?.root
     }
 
-    override fun onResume() {
-        super.onResume()
-        viewModel.log()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding?.buttonBack?.setOnClickListener {
+            findNavController().navigate(R.id.action_fragmentB_to_fragmentA)
+        }
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
+    }
 }

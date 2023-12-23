@@ -7,12 +7,15 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import dagger.hilt.android.AndroidEntryPoint
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import app.projectforinjectinghilt.MainActivity
+import app.projectforinjectinghilt.R
 import app.projectforinjectinghilt.databinding.FragmentABinding
 
 @AndroidEntryPoint
 class FragmentA : Fragment() {
 
-    private lateinit var binding: FragmentABinding
+    private var binding: FragmentABinding? = null // todo подправить
     val viewModel: ViewModelA by viewModels()
 
     override fun onCreateView(
@@ -23,8 +26,10 @@ class FragmentA : Fragment() {
         return binding?.root
     }
 
-    override fun onResume() {
-        super.onResume()
-        viewModel.log()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding?.buttonNext?.setOnClickListener {
+            findNavController().navigate(R.id.action_fragmentA_to_fragmentB)
+        }
     }
 }
