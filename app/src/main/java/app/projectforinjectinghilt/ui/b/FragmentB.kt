@@ -1,25 +1,25 @@
-package app.projectforinjectinghilt.ui.a
+package app.projectforinjectinghilt.ui.b
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import dagger.hilt.android.AndroidEntryPoint
 import androidx.fragment.app.viewModels
-import app.projectforinjectinghilt.databinding.FragmentABinding
+import app.projectforinjectinghilt.databinding.FragmentBBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class FragmentA : Fragment() {
+class FragmentB : Fragment() {
 
-    private lateinit var binding: FragmentABinding
-    val viewModel: ViewModelA by viewModels()
+    private lateinit var binding: FragmentBBinding
+    val viewModel: ViewModelB by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentABinding.inflate(inflater, container, false)
+        binding = FragmentBBinding.inflate(inflater, container, false)
         return binding?.root
     }
 
@@ -27,4 +27,5 @@ class FragmentA : Fragment() {
         super.onResume()
         viewModel.log()
     }
+
 }

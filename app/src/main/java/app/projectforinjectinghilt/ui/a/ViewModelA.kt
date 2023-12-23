@@ -8,7 +8,7 @@ import javax.inject.Inject
 class ViewModelA @Inject constructor(val test:String) : ViewModel() {
 
     fun log(){
-        println("BBBBBBBBBB $test")
+        println("AAA $test")
 
     }
 }
