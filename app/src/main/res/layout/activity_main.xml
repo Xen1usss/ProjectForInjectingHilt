@@ -16,7 +16,7 @@
       app:layout_constraintTop_toTopOf="parent" />
 
     <fragment
-        android:name="app.projectforinjectinghilt.ui.FragmentForActivityMain"
+        android:name="app.projectforinjectinghilt.ui.a.FragmentA"
         android:id="@+id/placeForFragments"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
