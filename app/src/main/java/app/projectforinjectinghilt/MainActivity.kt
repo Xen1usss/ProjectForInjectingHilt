@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater) //выделяет под это память
         val view = binding.root //содержит корневой элемент (констрэинт лэйаут)
         setContentView(view)
-        navController = Navigation.findNavController(this, R.id.navigation_host_container_for_fragments)
+        navController =
+            Navigation.findNavController(this, R.id.navigation_host_container_for_fragments)
     }
 }
